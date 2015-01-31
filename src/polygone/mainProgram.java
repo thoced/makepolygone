@@ -1,5 +1,6 @@
 package polygone;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFileChooser;
@@ -26,6 +27,7 @@ public class mainProgram {
 	private JMenuItem mntmNewMenuItem;
 	private JMenuItem menuEcriture;
 	private JPanelDraw pDraw;
+	private JMenuItem mFermer;
 
 	/**
 	 * Launch the application.
@@ -56,7 +58,9 @@ public class mainProgram {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setSize(1024, 768);
+		frame.setTitle("Make Polygone - thonon cedric");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setBackground(Color.GRAY);
 		
 		JMenuBar menu = new JMenuBar();
 		frame.setJMenuBar(menu);
@@ -69,7 +73,7 @@ public class mainProgram {
 			public void actionPerformed(ActionEvent arg0) 
 			{
 				JFileChooser choose = new JFileChooser();
-				int result = choose.showOpenDialog(null);
+				int result = choose.showOpenDialog(frame);
 				if(result == JFileChooser.APPROVE_OPTION)
 				{
 					File fileCalque = choose.getSelectedFile();
@@ -120,6 +124,15 @@ public class mainProgram {
 			}
 		});
 		menuFichier.add(menuEcriture);
+		
+		mFermer = new JMenuItem("Fermer");
+		mFermer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				frame.dispose();
+			}
+		});
+		menuFichier.add(mFermer);
 		
 		
 	}

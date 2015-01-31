@@ -42,6 +42,8 @@ public class JPanelDraw extends JPanel implements MouseListener
 		image = ImageIO.read(fileCalque);
 		// précision de la taille de la jpanel
 		this.setSize(1024, 768);
+		this.setBackground(Color.GRAY);
+		
 		// création de l'offset
 		offsetX = (this.getWidth() / 2) - (this.image.getWidth()/2);
 		offsetY = (this.getHeight() / 2) - (this.image.getHeight()/2);
