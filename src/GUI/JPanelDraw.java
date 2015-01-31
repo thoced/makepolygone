@@ -146,6 +146,15 @@ public class JPanelDraw extends JPanel implements MouseListener
 		bos.close();
 		
 	}
+	
+	// effacement du polygone
+	public void clearPolygone()
+	{
+		// clear sur la liste
+		this.listPolyPoint.clear();
+		// appel paint
+		this.repaint();
+	}
 
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
